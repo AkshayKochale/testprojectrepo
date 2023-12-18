@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Open New Page Example</title>
+  <script>
+    // Function to open a new page
+    function openNewPage() {
+      var selectList = document.getElementById("pageSelect");
+      var selectedPage = selectList.value;
+      var url = "test.html?#"+selectedPage;
+      window.open(url,"pageFF");
+    }
+  </script>
+</head>
+<body>
+  <select id="pageSelect">
+    <option value="Akshay">Akshay</option>
+    <option value="sunny">sunny</option>
+  </select>
+  <button onclick="openNewPage()">Open Page</button>
+</body>
+</html>

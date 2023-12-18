@@ -1,0 +1,508 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">org.postgresql.Driver</property>
+
+		<!--  <property name="connection.url">jdbc:postgresql://technopurpledb13.cpqmywherb62.ap-southeast-1.rds.amazonaws.com:5432/purpletrack2</property>
+		<property name="connection.username">awsreadonly</property>
+		<property name="connection.password">tp12345</property> 
+		  -->
+
+		<property name="connection.url">jdbc:postgresql://technopurpledev.cpqmywherb62.ap-southeast-1.rds.amazonaws.com:5432/purpletrack2</property> 
+		<property name="connection.username">postgres</property>
+		<property name="connection.password">technopurpledev</property> 
+		
+
+
+		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+		<property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+		<property name="show_sql">true</property>
+		<!-- https://stackoverflow.com/questions/17708869/how-to-reload-the-webpage-when-orientation-changes -->
+		<!-- <property name="hibernate.bytecode.use_reflection_optimizer">false</property> -->
+
+		<!-- <property name="connection.driver_class">org.postgresql.Driver</property> 
+			<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property> 
+			<property name="hibernate.temp.use_jdbc_metadata_defaults">false</property> -->
+
+
+		<!-- <property name="hibernate.c3p0.acquireIncrement">3</property> <property 
+			name="hibernate.c3p0.initialPoolSize">10</property> <property name="hibernate.c3p0.min_size">5</property> 
+			<property name="hibernate.c3p0.max_size">20</property> <propertyname="hibernate.c3p0.maxIdleTime">3600</property> 
+			<property name="hibernate.c3p0.maxIdleTimeExcessConnections">300</property> 
+			<property name="hibernate.c3p0.numHelperThreads">6</property> <property name="hibernate.c3p0.unreturnedConnectionTimeout">3600</property> -->
+		<!-- <mapping class="com.technopurple.dao.Employee" /> <mapping class="com.technopurple.dao.Dept"/> -->
+		<!-- <mapping class="com.technopurple.dao.LocationData"/> <mapping class="com.technopurple.dao.LastLocationData"/> -->
+		
+		
+		<mapping class="com.technopurple.dao.CustomReports"/>
+		<mapping class="com.technopurple.dao.CustomReportFields"/>
+		<mapping class="com.technopurple.dao.CustomReportWhere"/>
+		<mapping class="com.technopurple.dao.CustomRuntimeFilter"/>
+		
+		
+		<mapping class="com.technopurple.dao.FCMUserRegistration"/>
+		 		 <mapping class="com.technopurple.dao.ReportModules"/>
+                <mapping class="com.technopurple.dao.ReportModuleCols"/>
+                <mapping class="com.technopurple.dao.ReportSearchParams"/>
+		
+		<mapping class="com.technopurple.dao.Checkindetails"/>
+		<mapping class="com.technopurple.dao.ProcessinstancedetailsDAO"/>
+		<mapping class="com.technopurple.dao.Taskdetails"/>
+		<mapping class="com.technopurple.dao.StateinstancedetailsDAO"/>
+		
+		
+		
+		<mapping class="com.technopurple.dao.AccountCredentialProfile" />
+		<mapping class="com.technopurple.dao.Account" />
+		<mapping class="com.technopurple.dao.Accountinactiveinterval" />
+		<mapping class="com.technopurple.dao.Accountpoi" />
+		<mapping class="com.technopurple.dao.AccountPreference" />
+		<mapping class="com.technopurple.dao.Accountsmslimit" />
+
+		<mapping class="com.technopurple.dao.Alrtlog" />
+		<mapping class="com.technopurple.dao.Alrtmaster" />
+		<mapping class="com.technopurple.dao.Applanguage" />
+
+		<mapping class="com.technopurple.dao.Applicationmessage" />
+		<mapping class="com.technopurple.dao.Apptimezone" />
+
+		<mapping class="com.technopurple.dao.Statecity" />
+		<mapping class="com.technopurple.dao.Statustype" />
+
+		<mapping class="com.technopurple.dao.Poiicons" />
+		<mapping class="com.technopurple.dao.Userdetails" />
+		<mapping class="com.technopurple.dao.Asset" />
+		<mapping class="com.technopurple.dao.Assetbrand" />
+		<mapping class="com.technopurple.dao.Assetevent" />
+		<mapping class="com.technopurple.dao.Asseteventinterval" />
+		<mapping class="com.technopurple.dao.Asseteventoccurrence" />
+		<mapping class="com.technopurple.dao.Assetgroup" />
+		<!-- <mapping class="com.technopurple.dao.Assetgroupdetails" /> -->
+		<mapping class="com.technopurple.dao.Assetinactiveinterval" />
+		<mapping class="com.technopurple.dao.Assetioevent" />
+		<mapping class="com.technopurple.dao.Assetmodel" />
+		<!-- <mapping class="com.technopurple.dao.Assetsubscription" /> -->
+		<mapping class="com.technopurple.dao.Assettypemaster" />
+
+
+		<mapping class="com.technopurple.dao.PreferenceColumn" />
+		<mapping class="com.technopurple.dao.Eventlog" />
+		<mapping class="com.technopurple.dao.Eventmaster" />
+		<mapping class="com.technopurple.dao.Eventtype" />
+		<mapping class="com.technopurple.dao.Country" />
+		<mapping class="com.technopurple.dao.Countrystate" />
+		<!-- <mapping class="com.technopurple.dao.Credentialhierarchy" /> -->
+		<mapping class="com.technopurple.dao.Credentials" />
+		<mapping class="com.technopurple.dao.Poiinfo" />
+		<mapping class="com.technopurple.dao.Poireminder" />
+		<mapping class="com.technopurple.dao.Poitype" />
+		<mapping class="com.technopurple.dao.POIGroup" />
+
+
+		<mapping class="com.technopurple.dao.Deviceevent" />
+		<mapping class="com.technopurple.dao.Deviceinventory" />
+		<mapping class="com.technopurple.dao.Deviceio" />
+		<mapping class="com.technopurple.dao.Deviceiotype" />
+		<mapping class="com.technopurple.dao.Devicemanufacturer" />
+		<mapping class="com.technopurple.dao.Devicemaster" />
+		<mapping class="com.technopurple.dao.Devicestatuslog" />
+
+		<mapping class="com.technopurple.dao.Role" />
+
+		<mapping class="com.technopurple.dao.Siminventory" />
+		<mapping class="com.technopurple.dao.Simprovider" />
+		<mapping class="com.technopurple.dao.Simplan" />
+		<mapping class="com.technopurple.dao.Smscatalog" />
+		<mapping class="com.technopurple.dao.Occurrencetype" />
+
+		<mapping class="com.technopurple.dao.LastGpsdata" />
+		<mapping class="com.technopurple.dao.Lastgpsdatatypevalue" />
+		<mapping class="com.technopurple.dao.MapProvider" />
+		<mapping class="com.technopurple.dao.MapProviderservice" />
+
+		<mapping class="com.technopurple.dao.Geofence" />
+		<mapping class="com.technopurple.dao.Geofenceasset" />
+		<mapping class="com.technopurple.dao.Geofencelog" />
+		<mapping class="com.technopurple.dao.Geofencepoints" />
+		<mapping class="com.technopurple.dao.Gpsdata" />
+		<mapping class="com.technopurple.dao.Gpsdatatype" />
+		<mapping class="com.technopurple.dao.Gpsdatatypevalue" />
+		<mapping class="com.technopurple.dao.Graphicmaster" />
+
+		<mapping class="com.technopurple.dao.Subscriptiondefinition" />
+		<mapping class="com.technopurple.dao.Subscriptiontype" />
+		<mapping class="com.technopurple.dao.Tripdefinition" />
+		<mapping class="com.technopurple.dao.Tripdetail" />
+		<mapping class="com.technopurple.dao.Triphistory" />
+		<mapping class="com.technopurple.dao.Tripinstance" />
+		<mapping class="com.technopurple.dao.TTGpsdata" />
+		<mapping class="com.technopurple.dao.TTGpsdatatypevalue" />
+		<mapping class="com.technopurple.dao.TTLastgpsdata" />
+		<mapping class="com.technopurple.dao.TTLastgpsdatatypevalue" />
+		<mapping class="com.technopurple.dao.TTGpsdatadetails" />
+		<mapping class="com.technopurple.dao.Useraccount" />
+		<mapping class="com.technopurple.dao.Userasset" />
+		<mapping class="com.technopurple.dao.Userassetgroup" />
+		<mapping class="com.technopurple.dao.Usercreation" />
+		<mapping class="com.technopurple.dao.Usercredentials" />
+
+		<mapping class="com.technopurple.dao.Userdevicetoken" />
+		<mapping class="com.technopurple.dao.Userevent" />
+		<mapping class="com.technopurple.dao.Usergroup" />
+		<mapping class="com.technopurple.dao.Usersessions" />
+		<mapping class="com.technopurple.dao.Usersessionsummary" />
+
+
+		<!-- <mapping class="com.technopurple.dao.Routeasset" /> -->
+		<mapping class="com.technopurple.dao.Routedefinition" />
+		<mapping class="com.technopurple.dao.Routetransition" />
+		<mapping class="com.technopurple.dao.Schedulertype" />
+		<mapping class="com.technopurple.dao.Sendsms" />
+
+
+		<mapping class="com.technopurple.dao.Vehicletype" />
+		<mapping class="com.technopurple.dao.Vendordetails" />
+		<mapping class="com.technopurple.dao.Vendortype" />
+
+		<mapping class="com.technopurple.dao.Receivesms" />
+		<mapping class="com.technopurple.dao.Reminder" />
+		<mapping class="com.technopurple.dao.Reminderstatus" />
+		<mapping class="com.technopurple.dao.Reportscheduler" />
+
+		<mapping class="com.technopurple.dao.Servicehistory" />
+		<!-- <mapping class="com.technopurple.dao.Servicehistoryasset" /> -->
+		<mapping class="com.technopurple.dao.Servicereminder" />
+		<!-- <mapping class="com.technopurple.dao.Servicereminderasset" /> -->
+		<!-- <mapping class="com.technopurple.dao.Servicereminderdetails" /> -->
+		<mapping class="com.technopurple.dao.Servicetype" />
+
+		<mapping class="com.technopurple.dao.Policyreminder" />
+		<mapping class="com.technopurple.dao.Policytype" />
+
+		<mapping class="com.technopurple.dao.Policydetails" />
+		<mapping class="com.technopurple.dao.Miscellaneouscost" />
+		<mapping class="com.technopurple.dao.Miscellaneoustype" />
+
+		<mapping class="com.technopurple.dao.Driverdetails" />
+		<mapping class="com.technopurple.dao.FieldSelectDisplayType" />
+		<mapping class="com.technopurple.dao.FieldSelectOption" />
+		<mapping class="com.technopurple.dao.FieldSelectValueSource" />
+		<mapping class="com.technopurple.dao.FieldSelectValueType" />
+		<mapping class="com.technopurple.dao.FieldType" />
+		<mapping class="com.technopurple.dao.Form" />
+		<mapping class="com.technopurple.dao.FormField" />
+		<mapping class="com.technopurple.dao.FormFieldSelect" />
+		<mapping class="com.technopurple.dao.FormFieldSelectValue" />
+		<mapping class="com.technopurple.dao.FormType" />
+		<mapping class="com.technopurple.dao.FormInstance" />
+		<mapping class="com.technopurple.dao.FormInstanceValues" />
+
+		<mapping class="com.technopurple.dao.GeofenceGroup" />
+		<mapping class="com.technopurple.dao.Usereventinterval" />
+		<mapping class="com.technopurple.dao.Usereventoccurrence" />
+		<mapping class="com.technopurple.dao.POIGroupdetails" />
+		<mapping class="com.technopurple.dao.Userpoigroup" />
+		<mapping class="com.technopurple.dao.Credentialhierarchy" />
+		<mapping class="com.technopurple.dao.Credentialtype" />
+		<mapping class="com.technopurple.dao.Settingcategory" />
+		<mapping class="com.technopurple.dao.Settingmaster" />
+		<mapping class="com.technopurple.dao.Settingprofile" />
+		<mapping class="com.technopurple.dao.Settingprofilevalues" />
+		<mapping class="com.technopurple.dao.SettingFieldType" />
+		<mapping class="com.technopurple.dao.Usersettings" />
+
+		<mapping class="com.technopurple.dao.GCMRegistration" />
+		<mapping class="com.technopurple.dao.Notificationlog" />
+
+		<mapping class="com.technopurple.dao.Additionalsettingmaster" />
+		<mapping class="com.technopurple.dao.Useradditionalsettings" />
+		<mapping class="com.technopurple.dao.SettingFieldType" />
+		<mapping class="com.technopurple.dao.MobileAppDetails" />
+		<mapping class="com.technopurple.dao.Product" />
+		<mapping class="com.technopurple.dao.ProductType" />
+		<mapping class="com.technopurple.dao.Store" />
+		<mapping class="com.technopurple.dao.ProductGroup" />
+		<mapping class="com.technopurple.dao.Order" />
+
+		<mapping class="com.technopurple.dao.EnquiryDetails" />
+
+
+		<mapping class="com.technopurple.dao.Processdefinition" />
+
+		<mapping class="com.technopurple.dao.Processstate" />
+		<mapping class="com.technopurple.dao.Statetransition" />
+
+		<!-- <mapping class="com.technopurple.dao.Accountstatustype"/> -->
+
+
+		<mapping class="com.technopurple.dao.PlacesType" />
+
+		<mapping class="com.technopurple.dao.Processinstance" />
+		<mapping class="com.technopurple.dao.Stateinstance" />
+		<mapping class="com.technopurple.dao.CheckinProfile" />
+		<mapping class="com.technopurple.dao.ProcessEvent" />
+		<mapping class="com.technopurple.dao.FieldRules" />
+		<mapping class="com.technopurple.dao.ActionType" />
+		<mapping class="com.technopurple.dao.FieldTypeOperator" />
+		<mapping class="com.technopurple.dao.StateRules" />
+		<mapping class="com.technopurple.dao.RouteRule" />
+		<mapping class="com.technopurple.dao.UserRouteRule" />
+		<mapping class="com.technopurple.dao.Batteryvoltage" />
+		<mapping class="com.technopurple.dao.SabhaVerification" />
+		<mapping class="com.technopurple.dao.Routestops" />
+		<mapping class="com.technopurple.dao.Reportmaster" />
+
+
+		<mapping class="com.technopurple.dao.OrderFieldType" />
+		<mapping class="com.technopurple.dao.OrderForm" />
+		<mapping class="com.technopurple.dao.OrderFormField" />
+		<mapping class="com.technopurple.dao.OrderFieldRule" />
+		<mapping class="com.technopurple.dao.OrderInstanceValues" />
+		<mapping class="com.technopurple.dao.OrderFieldTypeOperator" />
+
+
+		<mapping class="com.technopurple.dao.ProductCategoryHierarchy" />
+		<mapping class="com.technopurple.dao.ProductCategory" />
+		<mapping class="com.technopurple.dao.ProductCategoryName" />
+
+
+		<mapping class="com.technopurple.dao.UserGroupType" />
+		<mapping class="com.technopurple.dao.GroupType" />
+
+		<mapping class="com.technopurple.bjp.pojo.BoothBhavan" />
+		<mapping class="com.technopurple.bjp.pojo.PramukhSthal" />
+		<mapping class="com.technopurple.bjp.pojo.Assignments" />
+		<mapping class="com.technopurple.bjp.pojo.PhoneBook" />
+		<mapping class="com.technopurple.bjp.pojo.Driver" />
+		<mapping class="com.technopurple.bjp.pojo.Presenter" />
+		<mapping class="com.technopurple.bjp.pojo.Reason" />
+		<mapping class="com.technopurple.bjp.pojo.Nosabha" />
+		<mapping class="com.technopurple.bjp.pojo.NosabhaDetail" />
+		<mapping class="com.technopurple.bjp.pojo.SurveyMaster" />
+		<mapping class="com.technopurple.bjp.pojo.SurveyDetail" />
+		<mapping class="com.technopurple.bjp.pojo.VidhansabhaCount" />
+
+		<mapping class="com.technopurple.dao.TTLastgpsdatadetails" />
+		<mapping class="com.technopurple.dao.AppMenuMaster" />
+		<mapping class="com.technopurple.dao.AccountAppMenu" />
+		<mapping class="com.technopurple.dao.ProcessstateTransition" />
+		<mapping class="com.technopurple.dao.Checkininstance" />
+
+		<mapping class="com.technopurple.dao.PlacesTypeUsers" />
+		<mapping class="com.technopurple.dao.SyncedUsers" />
+
+		<mapping class="com.technopurple.dao.SyncMaster" />
+		<mapping class="com.technopurple.dao.TargetType" />
+		<mapping class="com.technopurple.dao.TargetDuration" />
+		<mapping class="com.technopurple.dao.TargetProfile" />
+		<mapping class="com.technopurple.dao.AssetAppDetail" />
+		<mapping class="com.technopurple.dao.TargetInterval" />
+		<mapping class="com.technopurple.dao.TargetProductDetails" />
+		<mapping class="com.technopurple.dao.ProductPricing" />
+		<mapping class="com.technopurple.dao.AccountAppMenuProfile" />
+		<mapping class="com.technopurple.dao.AppMenuLanguageProfile" />
+		<mapping class="com.technopurple.dao.ReTaggedLog" />
+
+		<mapping class="com.technopurple.dao.AppLockProfile" />
+		<mapping class="com.technopurple.dao.AppLockMaster" />
+
+		<mapping class="com.technopurple.dao.PlannerSettingProfile" />
+		<mapping class="com.technopurple.dao.PlannerSettingMaster" />
+		<mapping class="com.technopurple.dao.PlannerSettingProfileValue" />
+		<mapping class="com.technopurple.dao.PlannedTask" />
+		<mapping class="com.technopurple.dao.TaskLog" />
+		<mapping class="com.technopurple.dao.TaskTrigger" />
+		<mapping class="com.technopurple.dao.TaskApproval" />
+		<mapping class="com.technopurple.dao.TaskProcess" />
+		<mapping class="com.technopurple.dao.TaskReminder" />
+		<mapping class="com.technopurple.dao.TaskInstance" />
+		<mapping class="com.technopurple.dao.TaskRemindersLogs" />
+
+		<mapping class="com.technopurple.dao.TTGeofencelog" />
+		<mapping class="com.technopurple.dao.TargetProfileNew" />
+		<mapping class="com.technopurple.dao.PlacesProfile" />
+		<mapping class="com.technopurple.dao.PlacesProfileEvent" />
+		<mapping class="com.technopurple.dao.SyncedUsersLog" />
+		<mapping class="com.technopurple.dao.Notificationlog" />
+		<mapping class="com.technopurple.dao.ProcessType" />
+		<mapping class="com.technopurple.dao.FCMRegistration" />
+		<mapping class="com.technopurple.dao.RetaggedFormData" />
+		<mapping class="com.technopurple.dao.GeofenceUser" />
+		<mapping class="com.technopurple.dao.LayoutProfile" />
+		<mapping class="com.technopurple.dao.LayoutMaster" />
+		<mapping class="com.technopurple.dao.ReportColumn" />
+		<mapping class="com.technopurple.dao.ReportHeaders" />
+
+		<mapping class="com.technopurple.dao.LeaveStatus" />
+		<mapping class="com.technopurple.dao.LeaveType" />
+		<mapping class="com.technopurple.dao.LeaveProfile" />
+		<mapping class="com.technopurple.dao.LeaveProfileDetails" />
+		<mapping class="com.technopurple.dao.LeaveProfileHolidays" />
+		<mapping class="com.technopurple.dao.LeaveInstance" />
+		<mapping class="com.technopurple.dao.UserLeaveDetails" />
+
+		<mapping class="com.technopurple.dao.Places" />
+		<mapping class="com.technopurple.dao.PlacesConfiguration" />
+
+		<mapping class="com.technopurple.dao.TempTracking" />
+		<mapping class="com.technopurple.dao.ExpiryOptions" />
+		<mapping class="com.technopurple.dao.SendOptions" />
+		<mapping class="com.technopurple.dao.TempTrackingStatus" />
+
+		<mapping class="com.technopurple.dao.Applocker" />
+		<mapping class="com.technopurple.dao.AppLockUser" />
+		<mapping class="com.technopurple.dao.UserDeviceinventory" />
+		<mapping class="com.technopurple.dao.Accountinfo" />
+		<mapping class="com.technopurple.dao.Integration" />
+
+		<mapping class="com.technopurple.dao.TaskEvent" />
+		<mapping class="com.technopurple.dao.BeatTaskProfile" />
+
+		<mapping class="com.technopurple.dao.Integration" />
+		<mapping class="com.technopurple.dao.ProductReference" />
+
+		<mapping class="com.technopurple.dao.SchedulerDate" />
+		<mapping class="com.technopurple.dao.PlacesLog" />
+
+		<mapping class="com.technopurple.dao.OrderActivityLog" />
+
+		<mapping class="com.technopurple.dao.IntegrationLog" />
+
+		<mapping class="com.technopurple.dao.indoor.Site" />
+
+		<mapping class="com.technopurple.dao.indoor.FloorDetail" />
+
+		<mapping class="com.technopurple.dao.indoor.Beaconinfo" />
+		<mapping class="com.technopurple.dao.indoor.BeaconGroup" />
+		<!-- <mapping class="com.technopurple.dao.indoor.BeaconStatus"/> -->
+
+		<mapping class="com.technopurple.dao.indoor.Locationdata" />
+		<mapping class="com.technopurple.dao.indoor.SingleLocationdata" />
+
+		<mapping class="com.technopurple.dao.indoor.Lastlocationdata" />
+		<mapping class="com.technopurple.dao.indoor.LastSingleLocationdata" />
+
+		<mapping class="com.technopurple.dao.AccountSettingProfile" />
+		<mapping class="com.technopurple.dao.AccountSettingMaster" />
+
+		<mapping class="com.technopurple.dao.WidgetProfile" />
+
+		<mapping class="com.technopurple.dao.WidgetProfileDetails" />
+
+		<mapping class="com.technopurple.dao.WidgetMaster" />
+
+
+		<mapping class="com.technopurple.dao.TemplateMaster" />
+
+		<mapping class="com.technopurple.dao.TemplateMasterDetails" />
+
+		<mapping class="com.technopurple.dao.OrganizationDefinition" />
+		<mapping class="com.technopurple.dao.OrganizationLevel" />
+		<mapping class="com.technopurple.dao.PlaceLevel" />
+		<mapping class="com.technopurple.dao.PlaceHierarchy" />
+
+		<!--<mapping class="com.technopurple.dao.Testaccount" /> -->
+		<mapping class="com.technopurple.dao.ReportFilter" />
+
+		<mapping class="com.technopurple.dao.ReportSearchParameter" />
+
+		<mapping class="com.technopurple.dao.ReportMasterSchedule" />
+		<!-- <mapping class="com.technopurple.dao.FormEditLog"/> -->
+
+
+
+		<mapping class="com.technopurple.dao.PlaceCategory" />
+		<mapping class="com.technopurple.dao.PlaceCategoryProductDetails" />
+
+		<mapping class="com.technopurple.dao.OrderStatusMasterDTO" />
+		<mapping class="com.technopurple.dao.OrderStatusLog" />
+
+		<mapping class="com.technopurple.dao.Placehierarchylog" />
+
+		<mapping class="com.technopurple.dao.OrderStatusProfile" />
+		<mapping class="com.technopurple.dao.TargetProductTypeDetails" />
+		<mapping class="com.technopurple.dao.FormEditLog" />
+
+		<mapping class="com.technopurple.dao.ProcessStatusMasterDao" />
+		<mapping class="com.technopurple.dao.ProcessStatusProfile" />
+		<mapping class="com.technopurple.dao.ProcessStatusLog" />
+		<mapping class="com.technopurple.dao.ProcessProfileDetails" />
+		<mapping class="com.technopurple.dao.Fueltype" />
+		<mapping class="com.technopurple.dao.Policytype" />
+		<mapping class="com.technopurple.dao.Vendordetails" />
+		<mapping class="com.technopurple.dao.Vendortype" />
+		<mapping class="com.technopurple.dao.Miscellaneoustype" />
+		<mapping class="com.technopurple.dao.Driverdetails" />
+		<mapping class="com.technopurple.dao.Servicetype" />
+		<mapping class="com.technopurple.dao.ImdaadDescription" />
+		<mapping class="com.technopurple.dao.ClientAccount" />
+		<mapping class="com.technopurple.dao.Resources" />
+		<mapping class="com.technopurple.dao.ResourceType" />
+		<mapping class="com.technopurple.dao.ResourceIdentifierType" />
+		<mapping class="com.technopurple.dao.ResourceStatus" />
+		<mapping class="com.technopurple.dao.Skills" />
+		<mapping class="com.technopurple.dao.ResourceGroup" />
+		<mapping class="com.technopurple.dao.RatingStatusProfileMaster" />
+		<mapping class="com.technopurple.dao.StateLog" />
+		<mapping class="com.technopurple.dao.ProcessLog"></mapping>
+		<mapping class="com.technopurple.dao.SafeLiftBreakDown" />
+		<mapping class="com.technopurple.dao.RatingStatusProfile" />
+		<mapping class="com.technopurple.dao.ProcessStatusGroup" />
+		<mapping class="com.technopurple.dao.FieldMasterDetails" />
+		<mapping class="com.technopurple.dao.FieldMaster" />
+		<mapping class="com.technopurple.dao.SiteGroup" />
+		<mapping class="com.technopurple.dao.TaskType" />
+		<mapping class="com.technopurple.dao.PriorityMaster" />
+		<mapping class="com.technopurple.dao.PriorityMasterProfile"/>
+		<mapping class="com.technopurple.dao.TaskProfile" />
+		<mapping class="com.technopurple.dao.AutoNumberProfile" />
+		<mapping class="com.technopurple.dao.ServiceTypes" />
+		<mapping class="com.technopurple.dao.ServiceCause" />
+		<mapping class="com.technopurple.dao.ServiceRemedy" />
+		<mapping class="com.technopurple.dao.StateTransitionNextState" /><!-- 
+		<mapping class="com.technopurple.dao.Stateinstance_08_2021" />
+		<mapping class="com.technopurple.dao.Stateinstance_09_2021" />
+		<mapping class="com.technopurple.dao.Stateinstance_10_2021" />
+		<mapping class="com.technopurple.dao.Stateinstance_11_2021" />
+		<mapping class="com.technopurple.dao.Stateinstance_12_2021" /> -->
+		<mapping class="com.technopurple.dao.CrmStateInstance" />
+
+		<mapping class="com.technopurple.dao.Manufacturer" />
+		<mapping class="com.technopurple.dao.Vendor" />
+		<mapping class="com.technopurple.dao.Store" />
+		<mapping class="com.technopurple.dao.StoreProduct" />
+		<mapping class="com.technopurple.dao.StockInventory" />
+		<mapping class="com.technopurple.dao.StockInventoryDetails" />
+		<mapping class="com.technopurple.dao.AutoNumberProfileType" />
+		<mapping class="com.technopurple.dao.TaskTypeAutoNumberProfile" />
+
+		<mapping class="com.technopurple.dao.AutoNumberProfileType" />
+
+		<mapping class="com.technopurple.dao.ProductRequest" />
+		<mapping class="com.technopurple.dao.ProductRequestDetails" />
+		<mapping class="com.technopurple.dao.ProductTransfer" />
+		<mapping class="com.technopurple.dao.RequestTransferHistory" />
+		<mapping class="com.technopurple.dao.Contract" />
+		<mapping class="com.technopurple.dao.PPMProfile" />
+		<mapping class="com.technopurple.dao.ClientType"/>
+		<mapping class="com.technopurple.dao.EscalationActionDetails"/>
+		<mapping class="com.technopurple.dao.EscalationDAO"/>
+		<mapping class="com.technopurple.dao.UnitTypes"/>
+		<mapping class="com.technopurple.dao.RatingMaster"/>
+		<mapping class="com.technopurple.dao.PlannedSchedule"/>
+		<mapping class="com.technopurple.dao.PlannedScheduledetails"/>
+		<mapping class="com.technopurple.dao.TaskHistory"/>
+		
+		
+
+	</session-factory>
+</hibernate-configuration>

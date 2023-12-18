@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+</head>
+<body>
+  <table id="myTable">
+    <thead>
+      <tr>
+        <th>Last Updated</th>
+        <th>User Name</th>
+        <th>Check In Time</th>
+        <th>Name</th>
+        <th>Check Out Time</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var jsonData = [
+        {
+          "Last Updated": null,
+          "User Name": "Net9",
+          "Check In Time": 1682998108000,
+          "Name": "Net Nine",
+          "Check Out Time": 1683073561000
+        }
+      ];
+
+      $('#myTable').DataTable({
+        data: jsonData,
+        columns: [
+          { data: 'Last Updated' },
+          { data: 'User Name' },
+          { data: 'Check In Time' },
+          { data: 'Name' },
+          { data: 'Check Out Time' }
+        ]
+      });
+    });
+  </script>
+</body>
+</html>
